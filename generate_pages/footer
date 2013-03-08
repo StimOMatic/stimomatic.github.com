@@ -1,0 +1,21 @@
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/urut">Ueli Rutishauser</a> and <a href="https://github.com/kotowicz">Andreas Kotowicz</a></p>
+        <p><small>Project funded by <a href="http://www.mpg.de/">MPG</a> and <a href="http://www.brain.mpg.de/">MPI for Brain Research</a></small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39136601-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+    
+  </body>
+</html>
