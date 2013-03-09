@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->      
+    <title>StimOmatic by U. Rutishauser, A. Kotowicz and G. Laurent</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>StimOmatic</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+        
+        <!-- links to screenshots and videos
+        <div class="downloads">
+          <span>Go to:</span>
+          <ul>
+            <li><a href="http://stimomatic.brain.mpg.de/screenshots.html" class="button">Screenshots</a></li>
+            <li><a href="http://stimomatic.brain.mpg.de/videos.html" class="button">Videos</a></li>
+          </ul>
+        </div>
+        -->
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+<h1>
+<a name="install--usage-instructions" class="anchor" href="#install--usage-instructions"><span class="mini-icon mini-icon-link"></span></a>Install &amp; Usage instructions</h1>
+
+<p>The following are install and usage instructions for the <code>StimOmatic</code> software package that will run on the analysis computer. These instructions assume that you are using a <code>Neuralynx</code> system operated by the <code>Cheetah</code> data acquisition software.</p>
+
+<p>For testing, the demo version of Cheetah can be used. This can be obtained for free from <a href="http://www.neuralynx.com">www.neuralynx.com</a>. The demo version contains a demo data file that can be used for replay and to StimOMatic this
+will look just like a real system.</p>
+
+<p>This version has been tested with Cheetah v5.6.3 and v5.3.1. and Neuralynx Router v1.2.0. Version of the router less than 1.2.0 are not supported nor are any version of Cheetah less than 5.3.1.</p>
+
+<h1>
+<a name="installing-stimomatic" class="anchor" href="#installing-stimomatic"><span class="mini-icon mini-icon-link"></span></a>Installing StimOmatic</h1>
+
+<h2>
+<a name="1-install-and-run-netcomrouter" class="anchor" href="#1-install-and-run-netcomrouter"><span class="mini-icon mini-icon-link"></span></a>1) Install and run NetComRouter</h2>
+
+<ul>
+<li>download NetComRouter program <a href="http://neuralynx.com/software/Router_v120.zip">http://neuralynx.com/software/Router_v120.zip</a> </li>
+<li>run programm by double clicking on <code>Router.exe</code>
+</li>
+<li>connect to your Cheetah computer (<code>Network</code> -&gt; <code>Connect to server</code> -&gt; <code>IP address</code>)</li>
+</ul><h2>
+<a name="2-python-and-opengl-plotting" class="anchor" href="#2-python-and-opengl-plotting"><span class="mini-icon mini-icon-link"></span></a>2) Python and OpenGL plotting</h2>
+
+<ul>
+<li>follow instructions in <code>python\OpenGLPlotting\pomp\docs\INSTALL.txt</code> file.</li>
+</ul><h2>
+<a name="3-matlab" class="anchor" href="#3-matlab"><span class="mini-icon mini-icon-link"></span></a>3) Matlab</h2>
+
+<ul>
+<li>add directory  <code>matlab\</code> to your matlab path.</li>
+<li>open <code>setpath_win.m</code> and modify <code>basepath</code> so it points to above directory (full path).</li>
+</ul><h1>
+<a name="using-stimomatic" class="anchor" href="#using-stimomatic"><span class="mini-icon mini-icon-link"></span></a>Using StimOmatic</h1>
+
+<ul>
+<li>run <code>setpath_win</code>
+</li>
+<li>run <code>OSortViewer</code>
+</li>
+<li>modify <code>Router IP</code> so that the IP address matches the IP of the computer where <code>Router.ext</code> is running (see 1).</li>
+<li>press <code>Connect</code> button</li>
+<li>select channel from <code>CSC Channels</code> pulldown list, and add it using the <code>+</code> sign. </li>
+<li>select plugin from plugin list on right side of GUI, e.g., <code>Continuous LFP/Spikes plot (OpenGL)</code>. Press <code>Add Plugin</code> button.</li>
+<li>optionally: select <code>Yes</code> from <code>RT Ctrl Mode</code>
+</li>
+<li>optionally: if you plan to control a stimulus presentation system conditionally on the incoming data,
+don't forget to fill out the <code>PTB Sys IP</code> field (the <code>pCtrlLFP</code> uses this for example).</li>
+<li>press <code>Start data feed</code> </li>
+</ul><p>you should see some output like:</p>
+
+<pre><code>Lab 1: 
+  pContinuousOpenGL-1-43
+Lab 2: 
+  pContinuousOpenGL-1-45
+</code></pre>
+
+<p>This will indicated that the previously selected plugin has the absolute plugin ID 1, and that we want to visualize channels 43 and 45. We need to now configure our OpenGL plugin accordingly: </p>
+
+<ul>
+<li>go to directory <code>python\OpenGLPlotting\</code>
+</li>
+<li>open the file <code>1_start_pContinuousOpenGL.py</code> for editing</li>
+<li>set <code>abs_plugin_ID = 1</code> and <code>channel_numbers = [43, 45]</code>
+</li>
+<li>run <code>1_start_pContinuousOpenGL.py</code> by double clicking the file</li>
+</ul><h1>
+<a name="using-conditional-visual-displays" class="anchor" href="#using-conditional-visual-displays"><span class="mini-icon mini-icon-link"></span></a>Using conditional visual displays</h1>
+
+<p>See the <a href="https://github.com/StimOmatic/StimOmatic/blob/master/matlab/psychophysics-example/INSTALL.txt">INSTALL.txt</a> file inside the subdirectory <code>matlab\psychophysics-example</code> for instructions on how to run the display part of StimOmatic.</p>      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/urut">Ueli Rutishauser</a> and <a href="https://github.com/kotowicz">Andreas Kotowicz</a></p>
+        <p><small>Project funded by <a href="http://www.mpg.de/">MPG</a> and <a href="http://www.brain.mpg.de/">MPI for Brain Research</a></small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39136601-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+    
+  </body>
+</html>
