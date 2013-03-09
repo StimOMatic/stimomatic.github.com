@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->      
+    <title>StimOmatic by U. Rutishauser, A. Kotowicz and G. Laurent</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>StimOmatic</h1>
+        <p></p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+        
+        <!-- links to screenshots and videos
+        <div class="downloads">
+          <span>Go to:</span>
+          <ul>
+            <li><a href="http://stimomatic.brain.mpg.de/screenshots.html" class="button">Screenshots</a></li>
+            <li><a href="http://stimomatic.brain.mpg.de/videos.html" class="button">Videos</a></li>
+          </ul>
+        </div>
+        -->
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+<h1>
+<a name="instructions-to-install-the-psychophysics-display-demo-for-stimomatic" class="anchor" href="#instructions-to-install-the-psychophysics-display-demo-for-stimomatic"><span class="mini-icon mini-icon-link"></span></a>Instructions to install the Psychophysics display demo for StimOmatic.</h1>
+
+<p>This package has two components:<br>
+1) Simple psychophysics toolbox script (Matlab) that displays stimuli conditional on commands received from the online analysis of StimOMatic.<br>
+2) Python communication server that receives commands sent by StimOmatic.</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="mini-icon mini-icon-link"></span></a>Requirements:</h2>
+
+<p>These apply to the system where psychophysics toolbox should be used to display stimuli.</p>
+
+<ul>
+<li>Matlab</li>
+<li>Runnning Psychophysics toolbox version 3 (PTB3).</li>
+<li>Python 2.7.3.</li>
+</ul><h2>
+<a name="install-instructions" class="anchor" href="#install-instructions"><span class="mini-icon mini-icon-link"></span></a>Install instructions:</h2>
+
+<h3>
+<a name="1-python" class="anchor" href="#1-python"><span class="mini-icon mini-icon-link"></span></a>1) Python</h3>
+
+<p>The Python TCP Server is in <code>python/tcpServerMmap/tcpServerMmap.py</code>  </p>
+
+<p>The default for the shared file is set as <code>c:/temp/varstoreNew.dat</code>. The default TCP Port used is 9999.<br>
+Change these settings as required.  </p>
+
+<p>Then run <code>tcpServerMmap.py</code>. It should say <code>Press any key to start...</code>.<br>
+Press any key and it should say <code>Ready to receive data...</code>.  </p>
+
+<p>This completes the Python part. Press <code>Ctrl-C</code> to close the program properly.</p>
+
+<h3>
+<a name="2-matlab" class="anchor" href="#2-matlab"><span class="mini-icon mini-icon-link"></span></a>2) Matlab</h3>
+
+<p>In the Matlab running on the display system (psychophysics toolbox), execute <code>setpath_win.m</code> to initialize all paths.<br>
+Modify <code>experimentScenes1_testConditional.m</code> accordingly (paths in first few lines).</p>
+
+<p>This script will display stimuli conditional on the power of ongoing oscillations. Also, it will send TTLs to the acqusition
+system via the parallel port. Disable this by removing the calls to <code>sendTTLwithLog.m</code></p>
+
+<p>Also, set which screen(s) should be updated. The screens variable specifies how many screens should be updated. Set to 1 unless you have a multi-screen setup and want to use several for displaying visual stimuli.<br>
+The default is that only one screen is updated. Drag matlab to the second screen so you can see the cmd line while the experiment runs.
+Also drag the python script that receives the data to the same screen so you can observe the data arriving.</p>
+
+<h2>
+<a name="usage-instructions" class="anchor" href="#usage-instructions"><span class="mini-icon mini-icon-link"></span></a>Usage instructions:</h2>
+
+<ol>
+<li><p>In Stimomatic, put the IP address of the system where <code>tcpServerMmap.py</code> is running into the field <code>PTB Sys IP</code>.</p></li>
+<li><p>Add the <code>Realtime Control LFP</code> plugin. Adjust settings accordingly. Whenever the threshold is crossed for the channel specified, the control plugin will send a command to the system identified in <code>PTY Sys IP</code>. 
+The <code>tcpServerMmap.py</code> script will acknowledge this with <code>received data: X</code>.</p></li>
+<li><p>Start <code>experimentScenes1_testConditional.m</code>
+Press any key to start the experiment. Press <code>s</code> to abort.</p></li>
+</ol><p>This demo script waits for two thresholds, a low one and a high one (conditional sequence experiment as described in the paper).
+For demo purposes, use the <code>power hilbert thresh</code> method in the control plugin in stimomatic.
+Set <code>Th#1</code> to a high positive value and <code>Th#2</code> to a low value. A negative value in <code>Th#2</code> means you want to trigger when the signal is below this threshold. </p>      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/urut">Ueli Rutishauser</a> and <a href="https://github.com/kotowicz">Andreas Kotowicz</a></p>
+        <p><small>Project funded by <a href="http://www.mpg.de/">MPG</a> and <a href="http://www.brain.mpg.de/">MPI for Brain Research</a></small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39136601-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+    
+  </body>
+</html>
