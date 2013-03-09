@@ -49,10 +49,10 @@ do
     curl -s $file_in | curl -s --data-binary @- -H 'Content-Type: text/plain' $GITHUB_API_URL >> $full_file_out
     # add footer
     cat footer >> $full_file_out
-    # replace ".md" hrefs to ".html"
+    # replace ".md" hrefs with ".html"
     sed -i 's|<a[^>]* href="\([^"]*\).md|<a href="\1.html|g' $full_file_out
-    # replace ".md" text (between <a></a>) with ""
-    sed -i 's/\.md//g' $full_file_out
+    # replace ".md" text (between <a></a>) with "" - commented out March 9th 2013
+    #sed -i 's/\.md//g' $full_file_out
 done
 
 # move generated files to target directory
