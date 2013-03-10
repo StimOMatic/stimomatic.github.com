@@ -59,3 +59,7 @@ done
 cp -fR $basepath/* ../
 rm -fR $basepath
 
+# now run:
+# git commit -a 
+# git push
+
