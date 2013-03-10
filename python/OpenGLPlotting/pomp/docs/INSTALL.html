@@ -73,43 +73,56 @@
 <h3>
 <a name="1-windows" class="anchor" href="#1-windows"><span class="mini-icon mini-icon-link"></span></a>1) Windows:</h3>
 
-<p><strong>A)</strong> if you are planning to run this program on Windows (32bit and 64 bit), make sure to install the 32bit version of Python. The 64bit version of Python on Windows won't work with pyglet! </p>
+<h4>
+<a name="a-install-python" class="anchor" href="#a-install-python"><span class="mini-icon mini-icon-link"></span></a>A) install <em>Python</em>
+</h4>
+
+<p>If you are planning to run this program on Windows (32bit and 64 bit), make sure to <strong>install the 32bit</strong> version of Python. The 64bit version of Python on Windows won't work with pyglet!</p>
 
 <pre><code>  E.g.: python-2.7.3.exe
 </code></pre>
 
-<p><strong>B)</strong> install 32bit version of <em>setuptools</em> <a href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a>  </p>
+<h4>
+<a name="b-install-setuptools" class="anchor" href="#b-install-setuptools"><span class="mini-icon mini-icon-link"></span></a>B) install <em>setuptools</em>
+</h4>
+
+<p>Download and install the 32bit version of <em>setuptools</em> (see <a href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a>).</p>
 
 <pre><code>  E.g.: setuptools-0.6c11.win32-py2.7.exe
 </code></pre>
 
-<p><strong>C)</strong> install Numpy package  </p>
+<h4>
+<a name="c-install-numpy-package" class="anchor" href="#c-install-numpy-package"><span class="mini-icon mini-icon-link"></span></a>C) install <em>Numpy</em> package</h4>
 
 <pre><code>  $ cd c:\python27\Scripts   
   $ easy_install numpy
 </code></pre>
 
-<p><strong>D)</strong> set the Nvidia driver 3D settings to <em>performance</em> if you want highest FPS</p>
+<h4>
+<a name="d-configure-nvidia-driver" class="anchor" href="#d-configure-nvidia-driver"><span class="mini-icon mini-icon-link"></span></a>D) configure Nvidia driver</h4>
+
+<p>Set the Nvidia driver 3D settings to <em>performance</em> if you want highest FPS.</p>
 
 <h3>
 <a name="1-linux" class="anchor" href="#1-linux"><span class="mini-icon mini-icon-link"></span></a>1) Linux:</h3>
 
-<p>on ubuntu 12.04 you can do:  </p>
+<p>On Ubuntu 12.04 you can do:  </p>
 
 <pre><code>$ sudo apt-get install python-numpy pyglet
 </code></pre>
 
-<p>on ubuntu &lt; 12.04 do:  </p>
+<p>On Ubuntu &lt; 12.04 do:  </p>
 
 <pre><code>$ sudo apt-get install python-numpy
 </code></pre>
 
-<p>now install pyglet by hand as described in 2B)</p>
+<p>now install pyglet by hand as described in <a href="#b-mac--linux">2B</a></p>
 
 <h3>
 <a name="2-installing-a-recent-version-of-pyglet--version-12" class="anchor" href="#2-installing-a-recent-version-of-pyglet--version-12"><span class="mini-icon mini-icon-link"></span></a>2) Installing a recent version of pyglet (&lt; version 1.2):</h3>
 
-<p><strong>A)</strong> Windows</p>
+<h4>
+<a name="a-windows" class="anchor" href="#a-windows"><span class="mini-icon mini-icon-link"></span></a>A) Windows</h4>
 
 <p>download from <a href="https://code.google.com/p/pyglet/downloads/list">https://code.google.com/p/pyglet/downloads/list</a> </p>
 
@@ -123,7 +136,8 @@ cd d:\code\pyglet
 c:\Python27\python.exe setup.py install
 </code></pre>
 
-<p><strong>B)</strong> Mac &amp; Linux</p>
+<h4>
+<a name="b-mac--linux" class="anchor" href="#b-mac--linux"><span class="mini-icon mini-icon-link"></span></a>B) Mac &amp; Linux</h4>
 
 <pre><code>$ hg clone https://pyglet.googlecode.com/hg/ pyglet  
 $ sudo python setup.py install 
@@ -134,7 +148,7 @@ $ sudo python setup.py install
 
 <ul>
 <li>Nvidia driver version 280.13; we experienced lot's of problems with versions 290 &amp; 295.</li>
-<li>latest pyglet dev version is installed (see point 2). We experienced very poor performance with both pyglet-1.1.2 and pyglet-1.1.4 that ship with Ubuntu.</li>
+<li>latest pyglet dev version is installed (see point <a href="#2-installing-a-recent-version-of-pyglet--version-12">2</a>). We experienced very poor performance with both pyglet-1.1.2 and pyglet-1.1.4 that ship with Ubuntu.</li>
 </ul>      </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/urut">Ueli Rutishauser</a> and <a href="https://github.com/kotowicz">Andreas Kotowicz</a></p>
