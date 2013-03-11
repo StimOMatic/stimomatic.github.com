@@ -7,12 +7,14 @@ input_files[1]='https://raw.github.com/StimOmatic/StimOmatic/master/FAQ.md'
 input_files[2]='https://raw.github.com/StimOmatic/StimOmatic/master/INSTALL.md'
 input_files[3]='https://raw.github.com/StimOmatic/StimOmatic/master/python/OpenGLPlotting/pomp/docs/INSTALL.md'
 input_files[4]='https://raw.github.com/StimOmatic/StimOmatic/master/matlab/psychophysics-example/INSTALL.md'
+input_files[5]='https://raw.github.com/StimOmatic/StimOmatic/master/DOCUMENTATION.md'
 
 output_files[0]='index.html'
 output_files[1]='FAQ.html'
 output_files[2]='INSTALL.html'
 output_files[3]='INSTALL.html'
 output_files[4]='INSTALL.html'
+output_files[5]='DOCUMENTATION.html'
 
 basepath='fake_root/'
 
@@ -21,6 +23,7 @@ output_dir[1]=$basepath
 output_dir[2]=$basepath
 output_dir[3]=$basepath'python/OpenGLPlotting/pomp/docs/'
 output_dir[4]=$basepath'matlab/psychophysics-example/'
+output_dir[5]=$basepath
 
 GITHUB_API_URL=https://api.github.com/markdown/raw
 
