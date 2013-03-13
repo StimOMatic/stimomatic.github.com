@@ -2,13 +2,13 @@
 # inspired by: https://github.com/lviggiano/owner/blob/gh-pages/bin/autogen
 # see also:    http://developer.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode 
 
-input_files[0]='https://raw.github.com/StimOmatic/StimOmatic/master/README.md'
-input_files[1]='https://raw.github.com/StimOmatic/StimOmatic/master/FAQ.md'
-input_files[2]='https://raw.github.com/StimOmatic/StimOmatic/master/INSTALL.md'
-input_files[3]='https://raw.github.com/StimOmatic/StimOmatic/master/python/OpenGLPlotting/pomp/docs/INSTALL.md'
-input_files[4]='https://raw.github.com/StimOmatic/StimOmatic/master/matlab/psychophysics-example/INSTALL.md'
-input_files[5]='https://raw.github.com/StimOmatic/StimOmatic/master/DOCUMENTATION.md'
-input_files[6]='https://raw.github.com/StimOmatic/StimOmatic/master/DOWNLOADS.md'
+input_files[0]='https://raw.github.com/StimOMatic/StimOMatic/master/README.md'
+input_files[1]='https://raw.github.com/StimOMatic/StimOMatic/master/FAQ.md'
+input_files[2]='https://raw.github.com/StimOMatic/StimOMatic/master/INSTALL.md'
+input_files[3]='https://raw.github.com/StimOMatic/StimOMatic/master/python/OpenGLPlotting/pomp/docs/INSTALL.md'
+input_files[4]='https://raw.github.com/StimOMatic/StimOMatic/master/matlab/psychophysics-example/INSTALL.md'
+input_files[5]='https://raw.github.com/StimOMatic/StimOMatic/master/DOCUMENTATION.md'
+input_files[6]='https://raw.github.com/StimOMatic/StimOMatic/master/DOWNLOADS.md'
 
 output_files[0]='index.html'
 output_files[1]='FAQ.html'
